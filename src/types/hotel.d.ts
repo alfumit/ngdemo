@@ -3,8 +3,9 @@
  */
 type Hotel = {
   'name': string,
-  'stars': string,
+  'stars': number,
   'description': string,
   'telephone': string,
-  'photo': string
+  'photo': string,
+  'city'?: City
 };

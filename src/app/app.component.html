@@ -1,12 +1,15 @@
 <h1>
   {{title}}
+  <br>
+  {{selectedHotel.name}}
 </h1>
 <div class="element">
   <div class="element-left">
-    <app-element-left></app-element-left>
+    <app-element-left (hotelSwitch) = "selectedHotel = $event"></app-element-left>
   </div>
   <div class="element-right">
-    <teddy-bear></teddy-bear>
-    <temperatur></temperatur>
+    <temperatur [city]="selectedHotel.city"></temperatur>
+    <teddy-bear [city]="selectedHotel.city"></teddy-bear>
   </div>
+  <div class="clear"> </div>
 </div>

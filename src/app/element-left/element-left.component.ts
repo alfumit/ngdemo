@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { cities } from '../../mock-data';
+import {hotels} from '../../mock-data';
 
 @Component({
   selector: 'app-element-left',
@@ -8,9 +9,14 @@ import { cities } from '../../mock-data';
 })
 export class ElementLeftComponent {
   public cities: City[] = cities;
-  /*public data: [string] = [{
-    name:  'xxx',
-    address: 'yyy',
-    phone: 'zzz'
-  }]*/
+  public hotels: Hotel[] = hotels;
+
+  @Output()
+  public hotelSwitch: EventEmitter<Hotel> = new EventEmitter<Hotel>();
+
+  public switchHotel(e: Hotel): void {
+    this.hotelSwitch.emit(e);
+  };
+
+
 }
