@@ -37,7 +37,7 @@ export const hotels: Hotel[] = [
   },
   {
     'name': 'Shithole',
-    'stars': .5,
+    'stars': 3,
     'description': 'Right in the middle of Moscow',
     'telephone': '998976868686',
     'photo': 'link',

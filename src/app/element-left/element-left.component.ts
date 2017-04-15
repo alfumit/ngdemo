@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { cities } from '../../mock-data';
 import {hotels} from '../../mock-data';
 
@@ -10,6 +10,9 @@ import {hotels} from '../../mock-data';
 export class ElementLeftComponent {
   public cities: City[] = cities;
   public hotels: Hotel[] = hotels;
+
+  @Input()
+  public selectedStars: number = 0;
 
   @Output()
   public hotelSwitch: EventEmitter<Hotel> = new EventEmitter<Hotel>();

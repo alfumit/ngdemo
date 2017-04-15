@@ -7,6 +7,13 @@ import { HotelFilterPipe } from './hotel-filter.pipe';
   imports: [
     CommonModule
   ],
-  declarations: [ImgPipe, HotelFilterPipe]
+  exports: [
+    ImgPipe,
+    HotelFilterPipe
+  ],
+  declarations: [
+    ImgPipe,
+    HotelFilterPipe
+  ]
 })
 export class PipesModule { }

@@ -5,8 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HotelFilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  public transform(hotels: Hotel[], stars: number): any {
+    if (!stars) {
+      return hotels;
+    }
+    return hotels.filter((hotel: Hotel) => {
+      if (hotel.stars === stars) {
+        return hotel;
+      }
+    });
   }
 
 }
