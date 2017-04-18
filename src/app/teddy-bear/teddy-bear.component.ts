@@ -6,8 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./teddy-bear.component.css']
 })
 export class TeddyBearComponent {
-
   @Input()
   public city: City;
-
 }

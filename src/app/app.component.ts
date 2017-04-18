@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { cities, hotels } from '../mock-data';
+import { cities, DEFAULT_HOTEL, hotels } from '../mock-data';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,7 @@ export class AppComponent {
   public title: string = 'this is internal appcomponent content!';
   public cities: City[] = cities;
 
-
   @Input()
-  public selectedHotel: Hotel = hotels[0];
+  public selectedHotel: Hotel = DEFAULT_HOTEL ;
 
 }
