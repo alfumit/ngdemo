@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { cities, hotels } from '../../mock-data';
+import { cities } from '../../mock-data';
 import {MoscowApiService} from '../shared/services/moscow-api.service';
 import {Observable} from 'rxjs';
 
@@ -10,8 +10,8 @@ import {Observable} from 'rxjs';
 })
 export class ElementLeftComponent {
     public cities: City[] = cities;
-    public hotels: Observable<Hotel[]> = hotels;
-    // public apiData$: Observable<any>;
+    public hotels$: Observable<Hotel[]>;
+    public apiData$: Observable<any>;
 
   @Input()
   public selectedStars: number = 0;
@@ -20,7 +20,8 @@ export class ElementLeftComponent {
   public hotelSwitch: EventEmitter<Hotel> = new EventEmitter<Hotel>();
 
     public constructor(private moscowAPI: MoscowApiService) {
-        // this.apiData$ = this.moscowAPI.getData();
+         this.hotels$ = this.moscowAPI.getData();
+         this.apiData$ = this.moscowAPI.getMoscowApi();
     };
 
   public switchHotel(e: Hotel): void {

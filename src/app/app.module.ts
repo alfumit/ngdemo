@@ -10,7 +10,6 @@ import { ElementLeftComponent } from './element-left/element-left.component';
 import { ActivityRowComponent } from './element-left/activity-row/activity-row.component';
 import { HttpModule } from '@angular/http';
 import { MoscowApiService } from './shared/services/moscow-api.service';
-import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { TestComponent } from './test/test.component';
     TeddyBearComponent,
     ElementLeftComponent,
     ActivityRowComponent,
-    TestComponent,
   ],
   imports: [
     BrowserModule,

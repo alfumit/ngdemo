@@ -2,7 +2,7 @@
   "jsRules": {
     "class-name": true,
     "no-console": [
-      true,
+      false,
       "log",
       "debug",
       "info",
