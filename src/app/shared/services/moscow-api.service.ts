@@ -31,7 +31,7 @@ export class MoscowApiService {
             });
     }
 
-  public static getData(): Observable<Hotel[]> {
+  public getData(): Observable<Hotel[]> {
     return Observable.of([
           {
               'name': '1 season',
