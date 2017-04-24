@@ -22,7 +22,7 @@ export class ElementLeftComponent {
 
     public constructor(private moscowAPI: MoscowApiService) {
          this.hotels$ = this.moscowAPI.getData();
-         this.apiData$ = this.moscowAPI.getMoscowApi();
+         this.apiData$ = this.moscowAPI.getMoscowApi(3, 2);
          this.apiIcon = this.moscowAPI.getApiIcon();
     };
 
