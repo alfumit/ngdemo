@@ -10,21 +10,28 @@ import {cities} from '../../../mock-data';
 @Injectable()
 export class MoscowApiService {
 
-  private _apiLink: string = 'https://apidata.mos.ru/v1/datasets/655/version';
+  private _apiLink: string = 'https://apidata.mos.ru/v1/datasets/2343/rows?$top=2';
+    private _apiImage: string = 'https://apidata.mos.ru/v1/datasets/2343/image';
 
   public constructor(private http: Http) { }
 
-  public getMoscowApi(): Observable<any> {
-
+  public getMoscowApi(): Observable<MoscowHotel[]> {
         return this.http
             .get(this._apiLink)
             .map((response: Response) => {
-                console.log(response.json());
                 return response.json();
             });
   }
 
-  public getData(): Observable<Hotel[]> {
+    public getApiIcon(): Observable<any> {
+        return this.http
+            .get(this._apiImage)
+            .map((response: Response) => {
+                return response;
+            });
+    }
+
+  public static getData(): Observable<Hotel[]> {
     return Observable.of([
           {
               'name': '1 season',

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-activity-row',
@@ -13,7 +13,10 @@ export class ActivityRowComponent {
   public stars: number;
 
   @Input()
-  public description: string;
+  public website: string;
+
+  @Input()
+  public email: string;
 
   @Input()
   public telephone: string;

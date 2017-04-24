@@ -9,9 +9,10 @@ import {Observable} from 'rxjs';
   styleUrls: ['./element-left.component.css']
 })
 export class ElementLeftComponent {
-    public cities: City[] = cities;
+    // public cities: City[] = cities;
     public hotels$: Observable<Hotel[]>;
-    public apiData$: Observable<any>;
+    public apiData$: Observable<MoscowHotel[]>;
+    public apiIcon: Observable<any>;
 
   @Input()
   public selectedStars: number = 0;
@@ -22,6 +23,7 @@ export class ElementLeftComponent {
     public constructor(private moscowAPI: MoscowApiService) {
          this.hotels$ = this.moscowAPI.getData();
          this.apiData$ = this.moscowAPI.getMoscowApi();
+         this.apiIcon = this.moscowAPI.getApiIcon();
     };
 
   public switchHotel(e: Hotel): void {
