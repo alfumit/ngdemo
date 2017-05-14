@@ -3,9 +3,19 @@
 <div class="element-left-bottom">
   <div class="ele-strip">
     <ul>
-      <li *ngFor="let starCount of [0,1,2,3,4,5]">
-        <a (click)="selectedStars = starCount" *ngIf="starCount > 0">{{starCount}} stars</a>
-        <a (click)="selectedStars = starCount" *ngIf="starCount === 0">All stars</a>
+      <li *ngFor="let starCount of ['без звезд','одна звезда','две зведы','три звезды','четыре звезды','пять звезд']">
+        <a (click)="apiCallFilteredByStars(starCount)">{{starCount}}</a>
+        <!--a (click)="selectedStars = starCount" *ngIf="starCount > 0">{{starCount}} stars</a-->
+        <!--a (click)="selectedStars = starCount" *ngIf="starCount === 0">All stars</a-->
+      </li>
+    </ul>
+  </div>
+  <div class="ele-strip">
+    <ul>
+      <li>
+      <label for="region">Регион:</label>
+      <input id="region" type="text" name="region" [(ngModel)]="region">
+      {{region}}
       </li>
     </ul>
   </div>

@@ -10,6 +10,7 @@ import { ElementLeftComponent } from './element-left/element-left.component';
 import { ActivityRowComponent } from './element-left/activity-row/activity-row.component';
 import { HttpModule } from '@angular/http';
 import { MoscowApiService } from './shared/services/moscow-api.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MoscowApiService } from './shared/services/moscow-api.service';
     BrowserModule,
     TemperaturModule,
     PipesModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
     MoscowApiService

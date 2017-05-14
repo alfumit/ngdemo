@@ -21,7 +21,7 @@ export class MoscowApiService {
                       filter: string = ''
   ): Observable<MoscowHotel[]> {
         return this.http
-            .get(`${this._apiLink}?$top=${top}&skip=${skip}&orderBy=${orderBy}&filter=${filter}`)
+            .get(`${this._apiLink}?$top=${top}&$skip=${skip}&$orderBy=${orderBy}&$filter=${filter}`)
             .map((response: Response) => {
                 return response.json();
             });
